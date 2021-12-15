@@ -39,8 +39,8 @@ class CatalogController extends Controller
         $pelicula = Movie::findOrFail($id);
         $pelicula->rented = !($pelicula->rented);
         $pelicula->save();
-        return view('catalog.show', array(
-            'id' => $id));
+
+        return redirect('/catalog/show/'.$id);
     }
 
 }
