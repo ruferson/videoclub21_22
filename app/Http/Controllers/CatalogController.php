@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CatalogController extends Controller
 {
@@ -41,6 +42,16 @@ class CatalogController extends Controller
         $pelicula->save();
 
         return redirect('/catalog/show/'.$id);
+    }
+
+    public function putEdit(Request $request)
+    {
+        $id = $request->id;
+        $pelicula = Movie::findOrFail($id);
+
+        if($request->exists('poster')) {
+            $pelicula->poster = Storage::disk('public')->putFile('posters', $request->file('poster'));
+        }
     }
 
 }
