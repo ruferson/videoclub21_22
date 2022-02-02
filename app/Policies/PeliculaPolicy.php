@@ -30,7 +30,7 @@ class PeliculaPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -42,7 +42,7 @@ class PeliculaPolicy
      */
     public function view(User $user, Movie $pelicula)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class PeliculaPolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class PeliculaPolicy
      */
     public function update(User $user, Movie $pelicula)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +77,7 @@ class PeliculaPolicy
      */
     public function delete(User $user, Movie $pelicula)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,7 +89,7 @@ class PeliculaPolicy
      */
     public function restore(User $user, Movie $pelicula)
     {
-        //
+        return false;
     }
 
     /**
@@ -101,7 +101,7 @@ class PeliculaPolicy
      */
     public function forceDelete(User $user, Movie $pelicula)
     {
-        //
+        return false;
     }
 
 }
