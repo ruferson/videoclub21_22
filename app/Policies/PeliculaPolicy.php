@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Pelicula;
+use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -37,10 +37,10 @@ class PeliculaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Pelicula  $pelicula
+     * @param  \App\Models\Movie  $pelicula
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Pelicula $pelicula)
+    public function view(User $user, Movie $pelicula)
     {
         //
     }
@@ -60,10 +60,10 @@ class PeliculaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Pelicula  $pelicula
+     * @param  \App\Models\Movie  $pelicula
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Pelicula $pelicula)
+    public function update(User $user, Movie $pelicula)
     {
         //
     }
@@ -72,10 +72,10 @@ class PeliculaPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Pelicula  $pelicula
+     * @param  \App\Models\Movie  $pelicula
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Pelicula $pelicula)
+    public function delete(User $user, Movie $pelicula)
     {
         //
     }
@@ -84,10 +84,10 @@ class PeliculaPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Pelicula  $pelicula
+     * @param  \App\Models\Movie  $pelicula
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Pelicula $pelicula)
+    public function restore(User $user, Movie $pelicula)
     {
         //
     }
@@ -96,10 +96,10 @@ class PeliculaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Pelicula  $pelicula
+     * @param  \App\Models\Movie  $pelicula
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Pelicula $pelicula)
+    public function forceDelete(User $user, Movie $pelicula)
     {
         //
     }

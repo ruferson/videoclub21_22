@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Mari Cruz',
             'email' => 'maricruz@gmail.com',
-            'password' => bcrypt(env('maricruz')),
+            'password' => bcrypt('maricruz'),
             'administrador' => false,
             'proveedor' => true,
         ]);
@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Sin Permisos',
             'email' => 'sinPermisos@peliculas.com',
-            'password' => bcrypt(env('12345')),
+            'password' => bcrypt('12345'),
             'administrador' => false,
             'proveedor' => false,
         ]);
