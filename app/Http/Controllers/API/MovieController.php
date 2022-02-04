@@ -88,12 +88,35 @@ class MovieController extends Controller
 
         $host = 'www.omdbapi.com';
         $response = Http::get('http://' . $host . '/', [
-            'apikey' => env('API_KEY'),
+            'apikey' => env('OMDBAPI_KEY'),
             's' => $search,
             'page' => 1,
             'r' => 'json'
         ]);
         return response()->json(json_decode($response));
+
+    }
+
+    public function busquedaID($idFilm){
+
+        $host = 'www.omdbapi.com';
+        $response = Http::get('http://' . $host . '/', [
+            'apikey' => env('OMDBAPI_KEY'),
+            'i' => $idFilm,
+            'page' => 1,
+            'r' => 'json'
+        ]);
+
+        $movieData = json_decode($response, true);
+
+        $movie = new Movie;
+        $movie->title = $movieData['Title'];
+        $movie->year = $movieData['Year'];
+        $movie->director = $movieData['Director'];
+        $movie->poster = $movieData['Poster'];
+        $movie->synopsis = $movieData['Plot'];
+
+        return new MovieResource($movie);
 
     }
 }

@@ -28,8 +28,9 @@ Route::group( ['middleware' => 'auth:sanctum'],function () {
         'peliculas' => 'movie'
     ]);
 
+    Route::post('/peliculas/newOMDB/{idFilm}', [MovieController::class, 'busquedaID']);
 
-Route::get('/peliculas/search/{search}', [MovieController::class, 'search']);
+    Route::get('/peliculas/search/{search}', [MovieController::class, 'search']);
 
 });
 
