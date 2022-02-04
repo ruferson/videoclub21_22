@@ -13,13 +13,14 @@ class PeliculaPolicy
 
     public function before(User $user, $ability)
     {
-        if ($user->esProveedor() && ($ability!='delete' || $ability != 'create')) {
-            return false;
+        if ($user->esProveedor() && ($ability=='delete' || $ability == 'create')) {
+            return true;
         }
 
         if ($user->esAdministrador()){
             return true;
         }
+
     }
 
     /**
