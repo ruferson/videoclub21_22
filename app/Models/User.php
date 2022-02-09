@@ -42,11 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function esProveedor() {
-        return $this->proveedor == true;
+    function esProveedor(){
+        return $this->proveedor;
     }
 
-    public function esAdministrador() {
-        return $this->administrador == true;
+    function esAdministrador(){
+        return $this->administrador;
     }
+
 }

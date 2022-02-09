@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
         */
         //Utilizando el método create()
 
+<<<<<<< HEAD
         foreach (self::$arrayUsuarios as $usuarios) {
             $usuarios['password']=bcrypt($usuarios['password']);
             User::create(
@@ -43,6 +44,37 @@ class DatabaseSeeder extends Seeder
             );
         }
 
+=======
+        /*User::create([
+            'name' => env('ADMIN_NAME', 'admin'),
+            'email' => env('ADMIN_EMAIL', 'email.email.com'),
+            'password' => bcrypt(env('ADMIN_PASSWORD', 'alumno')),
+        ]);*/
+
+        User::create([
+            'name' => 'Ruben Fernandez',
+            'email' => '1173665@alu.murciaeduca.es',
+            'password' => bcrypt('12345'),
+            'administrador' => true,
+            'proveedor' => false,
+        ]);
+
+        User::create([
+            'name' => 'Mari Cruz',
+            'email' => 'maricruz@gmail.com',
+            'password' => bcrypt(env('maricruz')),
+            'administrador' => false,
+            'proveedor' => true,
+        ]);
+
+        User::create([
+            'name' => 'Sin Permisos',
+            'email' => 'sinPermisos@peliculas.com',
+            'password' => bcrypt(env('12345')),
+            'administrador' => false,
+            'proveedor' => false,
+        ]);
+>>>>>>> 88cc79919dc92192776bb941917e4cca8887f296
 
     }
 
