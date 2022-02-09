@@ -36,7 +36,6 @@ class DatabaseSeeder extends Seeder
         */
         //Utilizando el método create()
 
-<<<<<<< HEAD
         foreach (self::$arrayUsuarios as $usuarios) {
             $usuarios['password']=bcrypt($usuarios['password']);
             User::create(
@@ -44,7 +43,12 @@ class DatabaseSeeder extends Seeder
             );
         }
 
-=======
+        foreach (self::$arrayPeliculas as $peliculas) {
+            Movie::create(
+                $peliculas
+            );
+        }
+
         /*User::create([
             'name' => env('ADMIN_NAME', 'admin'),
             'email' => env('ADMIN_EMAIL', 'email.email.com'),
@@ -74,7 +78,6 @@ class DatabaseSeeder extends Seeder
             'administrador' => false,
             'proveedor' => false,
         ]);
->>>>>>> 88cc79919dc92192776bb941917e4cca8887f296
 
     }
 

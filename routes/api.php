@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\MovieController;
+use App\Http\Controllers\DirectorController;
 use App\Http\Resources\MovieResource;
 
 use Illuminate\Validation\ValidationException;
@@ -29,6 +30,10 @@ Route::group( ['middleware' => 'auth:sanctum'],function () {
     ]);
 
 Route::get('/peliculas/search/{search}', [MovieController::class, 'search']);
+
+    Route::apiResource('directores', DirectorController::class);
+
+    Route::get('/directores/import', DirectorController::class, 'search');
 
 });
 
