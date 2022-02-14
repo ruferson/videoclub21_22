@@ -18,4 +18,9 @@ class Movie extends Model
         'rented',
         'synopsis'
     ];
+
+    public function isDirector() {
+        return $this->belongsTo(\App\Models\Director::class, 'director_id');
+    }
+
 }

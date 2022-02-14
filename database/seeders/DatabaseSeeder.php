@@ -36,21 +36,6 @@ class DatabaseSeeder extends Seeder
         */
         //Utilizando el método create()
 
-<<<<<<< HEAD
-        foreach (self::$arrayUsuarios as $usuarios) {
-            $usuarios['password']=bcrypt($usuarios['password']);
-            User::create(
-                $usuarios
-            );
-        }
-
-=======
-        /*User::create([
-            'name' => env('ADMIN_NAME', 'admin'),
-            'email' => env('ADMIN_EMAIL', 'email.email.com'),
-            'password' => bcrypt(env('ADMIN_PASSWORD', 'alumno')),
-        ]);*/
-
         User::create([
             'name' => 'Ruben Fernandez',
             'email' => '1173665@alu.murciaeduca.es',
@@ -74,29 +59,8 @@ class DatabaseSeeder extends Seeder
             'administrador' => false,
             'proveedor' => false,
         ]);
->>>>>>> 88cc79919dc92192776bb941917e4cca8887f296
 
     }
-
-    private static $arrayUsuarios = array(
-        array(
-            'name' => "Jose Arjona Ortiz",
-            'email' => "1837071@alu.murciaeduca.es",
-            'password' => 'alumno',
-            'administrador' => true
-        ),
-        array(
-            'name' => "Alberto Sierra",
-            'email' => "alberto.sierra@alu.murciaeduca.es",
-            'password' => 'profesor',
-            'proveedor' => true
-        ),
-        array(
-            'name' => "Antonio Martinez",
-            'email' => "sinPermisos@peliculas.com",
-            'password' => 'sinpermisos'
-        )
-    );
 
     private static function seedCatalog()
     {

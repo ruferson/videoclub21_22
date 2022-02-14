@@ -15,7 +15,6 @@ class AddDirectorIdMoviesTable extends Migration
     {
         Schema::table('movies', function (Blueprint $table) {
             $table->unsignedBigInteger('director_id')->nullable();
-
             $table->foreign('director_id')->references('id')->on('directores');
         });
     }
