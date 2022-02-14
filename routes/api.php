@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\MovieController;
 use App\Http\Resources\MovieResource;
 
+use App\Http\Controllers\API\DirectorController;
+
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -20,12 +22,18 @@ use Illuminate\Support\Facades\Hash;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/directores/import', [DirectorController::class, 'import']);
 
 Route::group( ['middleware' => 'auth:sanctum'],function () {
 
     Route::apiResource('peliculas', MovieController::class)
     ->parameters([
         'peliculas' => 'movie'
+    ]);
+
+    Route::apiResource('directores', DirectorController::class)
+    ->parameters([
+        'directores' => 'director'
     ]);
 
 Route::get('/peliculas/search/{search}', [MovieController::class, 'search']);
